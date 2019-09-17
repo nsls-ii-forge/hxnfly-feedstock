@@ -16,15 +16,13 @@ build:
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
-  build:
+  host:
     - python
     - pip
-    - six
   run:
     - python
     - hxntools
     - ppmac
-    - six
     - xray-vision
 
 test:
