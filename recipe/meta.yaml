@@ -1,0 +1,38 @@
+{% set name = "hxnfly" %}
+{% set version = "0.0.2" %}
+{% set sha256 = "7da7eeac815af016110d5dcaf250c9df3c517154c8a7ffd80b81be3ca7b91943" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/NSLS-II-HXN/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+
+requirements:
+  build:
+    - python
+    - pip
+    - six
+  run:
+    - python
+    - hxntools
+    - ppmac
+    - six
+    - xray-vision
+
+test:
+  imports:
+    - hxnfly
+
+about:
+  home: https://github.com/NSLS-II-HXN/hxnfly
+  license: BSD
+  license_file: LICENSE
+  summary: Tools for NSLS-II HXN fly scans
