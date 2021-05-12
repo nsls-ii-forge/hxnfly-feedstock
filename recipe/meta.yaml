@@ -1,6 +1,6 @@
 {% set name = "hxnfly" %}
-{% set version = "0.0.5" %}
-{% set sha256 = "b6e1280e59929c6e0eabe4ad27a0b52d4bb0cc785ac7781b999e75643985b7f3" %}
+{% set version = "0.0.6" %}
+{% set sha256 = "7c14c5c16ab3c91a0c379f099d065bb09e66291fe81a8676cb66014663cb3717" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
